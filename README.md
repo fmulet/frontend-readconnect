@@ -18,4 +18,5 @@ bun dev
 ```
 
 Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
-# frontend-readconnect
+
+También se puede ingresar directamente al link [https://frontend-readconnect.onrender.com](https://frontend-readconnect.onrender.com)
