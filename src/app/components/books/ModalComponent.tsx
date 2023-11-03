@@ -1,5 +1,5 @@
 import { Modal, Box, Typography, Button } from "@mui/material";
-import { IBook } from "@/interfaces/IBook";
+import { IBook } from "../../interfaces/IBook";
 
 interface ModalProps {
   book: IBook | null;
