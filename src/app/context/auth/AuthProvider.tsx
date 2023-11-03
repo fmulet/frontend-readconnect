@@ -1,11 +1,14 @@
-import { IUser } from "@/interfaces/Iuser";
+'use client';
+
 import { FC, PropsWithChildren, useEffect, useReducer } from "react";
 import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer";
-import { client } from "@/helpers";
-import { MUTATION_LOGIN, MUTATION_REGISTER, QUERY_REVALIDATE_TOKEN } from "@/query";
 import Cookies from 'js-cookie';
-import { useRouter } from "next/router";
+
+import { IUser } from "../../interfaces/Iuser";
+import { client } from "../../helpers";
+import { useRouter } from "next/navigation";
+import { MUTATION_LOGIN, MUTATION_REGISTER, QUERY_REVALIDATE_TOKEN } from "../../query";
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -91,7 +94,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const logout = () => {
     Cookies.remove('token');
-    router.reload();
+    router.refresh();
   }
 
   return (

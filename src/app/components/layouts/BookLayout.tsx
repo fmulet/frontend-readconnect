@@ -1,7 +1,9 @@
+'use client';
 import { FC } from 'react';
 import Head from 'next/head';
-import { Navbar } from '@/ui/Navbar';
-import { SideMenu } from '@/ui/SideMenu';
+import { Navbar } from '../../ui/Navbar';
+import { SideMenu } from '../../ui/SideMenu';
+
 
 interface Props {
   title: string;

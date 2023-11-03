@@ -1,7 +1,8 @@
 import Cookies from 'js-cookie';
 
-import { QUERY_ALL_BOOKS } from '@/query';
+
 import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client';
+import { QUERY_ALL_BOOKS } from '../query';
 
 const link = ApolloLink.from([
   new HttpLink({

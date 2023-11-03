@@ -1,14 +1,17 @@
+
+'use client';
+
 import { useContext } from 'react';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { AppBar, Box, Button, Link, Toolbar, Typography } from '@mui/material';
-import { UiContext } from '@/context/ui';
+import { UiContext } from '../context/ui';
 
 
 export const Navbar = () => {
 
-  const { asPath, push } = useRouter();
+  const pathname = usePathname();
   const { toggleSideMenu } = useContext(UiContext);
 
   return (
@@ -26,7 +29,7 @@ export const Navbar = () => {
           className="fadeIn">
           <NextLink href='/category/men' passHref>
 
-            <Button color={asPath === '/' ? 'primary' : 'info'}>Libros</Button>
+            <Button color={pathname === '/' ? 'primary' : 'info'}>Libros</Button>
 
           </NextLink>
         </Box>

@@ -1,8 +1,9 @@
+'use client';
+
 import de from 'date-fns/locale/de';
 import { useState } from 'react';
 
-import { useBooks } from '@/hooks/useBooks';
-import { IBook } from '@/interfaces/IBook';
+
 import { Box, Button, Grid, Portal } from '@mui/material';
 import {
   DataGrid,
@@ -14,8 +15,10 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 import BookModal from './ModalComponent';
+import { useBooks } from '../../hooks/useBooks';
+import { IBook } from '../../interfaces/IBook';
 
-function CustomToolbar(props: any) {
+export function CustomToolbar(props: any) {
   return (
     <>
       <Portal container={() => document.getElementById('filter-panel')!}>
@@ -53,10 +56,10 @@ export default function QuickFilterOutsideOfGrid() {
     .map((book) => ({
       ...book,
       authors: Array.isArray(book.authors)
-        ? book.authors.map((author) => author.name).join(', ')
+        ? book.authors.map((author: any) => author.name).join(', ')
         : 'N/A',
       categories: Array.isArray(book.categories)
-        ? book.categories.map((category) => category.name).join(', ')
+        ? book.categories.map((category: any) => category.name).join(', ')
         : 'N/A',
     }));
 

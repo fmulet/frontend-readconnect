@@ -1,5 +1,6 @@
-import { IUser } from "@/interfaces/Iuser";
+'use client';
 import { createContext } from "react";
+import { IUser } from "../../interfaces/Iuser";
 
 interface ContextProps {
   isLoggedIn: boolean;

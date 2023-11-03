@@ -1,4 +1,4 @@
-import { IUser } from "@/interfaces/Iuser";
+import { IUser } from "../../interfaces/Iuser";
 import { AuthState } from "./AuthProvider";
 
 type AuthActionType =

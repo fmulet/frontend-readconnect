@@ -1,11 +1,12 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
-import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
+import { Box, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 import { AccountCircleOutlined, AdminPanelSettings, LoginOutlined, VpnKeyOutlined } from "@mui/icons-material"
 
-import { useRouter } from 'next/router';
-import { UiContext } from '@/context/ui';
-import { AuthContext } from '@/context';
+import { useRouter } from 'next/navigation';
+import { UiContext } from '../context/ui';
+import { AuthContext } from '../context';
+
 
 
 export const SideMenu = () => {
@@ -18,8 +19,6 @@ export const SideMenu = () => {
     toggleSideMenu();
     router.push(url);
   }
-
-
 
   return (
     <Drawer
@@ -68,12 +67,12 @@ export const SideMenu = () => {
                 <Divider />
                 <ListSubheader>Admin Panel</ListSubheader>
 
-                <ListItem button>
+                <ListItemButton >
                   <ListItemIcon>
                     <AdminPanelSettings />
                   </ListItemIcon>
                   <ListItemText primary={'Usuarios'} />
-                </ListItem>
+                </ListItemButton>
               </>
             )
           }

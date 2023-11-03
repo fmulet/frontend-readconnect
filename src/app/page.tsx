@@ -1,10 +1,12 @@
-import { BookLayout } from "@/components/layouts/BookLayout";
-import { useBooks } from "@/hooks/useBooks";
-import { Typography } from "@mui/material";
-import { FullScreenLoading } from "@/ui/FullScreenLoading";
-import CustomToolbar from "@/components/books/CustomToolbar";
+'use client';
 
-export default function Home() {
+import { Typography } from "@mui/material";
+import { useBooks } from "./hooks/useBooks";
+import { BookLayout } from "./components/layouts/BookLayout";
+import { FullScreenLoading } from "./ui/FullScreenLoading";
+import { CustomToolbar } from "./components/books/CustomToolbar";
+
+export default function Page() {
   const { isLoading } = useBooks();
 
   return (
@@ -20,4 +22,3 @@ export default function Home() {
     </BookLayout>
   )
 }
-

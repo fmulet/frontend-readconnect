@@ -1,8 +1,8 @@
-import { fetchAllBooks } from '@/helpers';
-import { IBook } from '@/interfaces/IBook';
-import { QUERY_ALL_BOOKS } from '@/query';
 
 import useSWR, { SWRConfiguration } from 'swr';
+import { IBook } from '../interfaces/IBook';
+import { fetchAllBooks } from '../helpers';
+import { QUERY_ALL_BOOKS } from '../query';
 
 export const useBooks = (config: SWRConfiguration = {}) => {
 
