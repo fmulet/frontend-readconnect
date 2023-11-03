@@ -3,15 +3,15 @@ import { useContext } from 'react';
 import { Box, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 import { AccountCircleOutlined, AdminPanelSettings, LoginOutlined, VpnKeyOutlined } from "@mui/icons-material"
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { UiContext } from '../context/ui';
 import { AuthContext } from '../context';
 
 
 
 export const SideMenu = () => {
-
   const router = useRouter();
+  const pathname = usePathname();
   const { isMenuOpen, toggleSideMenu } = useContext(UiContext);
   const { user, isLoggedIn, logout } = useContext(AuthContext);
 
@@ -51,7 +51,7 @@ export const SideMenu = () => {
                   <ListItemText primary={'Salir'} />
                 </ListItemButton>
               ) : (
-                <ListItemButton onClick={() => navigateTo(`/auth/login?p=${router.asPath}`)}>
+                <ListItemButton onClick={() => navigateTo(`/auth/login?p=${pathname}`)}>
                   <ListItemIcon>
                     <VpnKeyOutlined />
                   </ListItemIcon>
